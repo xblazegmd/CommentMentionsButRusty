@@ -1,0 +1,15 @@
+[package]
+name = "relearnrust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "*", features = ["full"] }
+reqwest = { version = "*", features = ["json"] }
+base64 = "*"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winrt-notification = "*"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+notify-rust = "*"
